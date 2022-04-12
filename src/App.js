@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import AddUser from "./components/AddUser";
+import { useState } from "react";
+import UsersList from "./components/UsersList";
+import ErrorModal from "./components/ErrorModal";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddUser
+        onAdd={setUsers}
+        showError={setShowModal}
+        setErrorMessage={setErrorMessage}
+      />
+      <UsersList users={users} />
+      {showModal && (
+        <ErrorModal showError={setShowModal}>{errorMessage}</ErrorModal>
+      )}
     </div>
   );
 }

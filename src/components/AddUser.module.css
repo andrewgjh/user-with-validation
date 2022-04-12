@@ -1,0 +1,9 @@
+.add_age_form{
+  display:flex;
+  flex:column;
+  align-items: center;
+  align-content: center;
+}
+.section_add_age{
+  margin: 0 auto;
+}
