@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./AddUser.module.css";
+import Card from "./Card";
+import classes from "./AddUser.module.css";
 
 const AddUser = ({ onAdd, showError, setErrorMessage }) => {
   const [usernameInput, setUserNameInput] = useState("");
@@ -32,8 +33,8 @@ const AddUser = ({ onAdd, showError, setErrorMessage }) => {
   };
 
   return (
-    <section className={styles.section_add_age}>
-      <form className={styles.add_age_form} onSubmit={submitHandler}>
+    <Card className={classes.input}>
+      <form className={classes.add_age_form} onSubmit={submitHandler}>
         <label>Username</label>
         <input
           type="text"
@@ -48,7 +49,7 @@ const AddUser = ({ onAdd, showError, setErrorMessage }) => {
         ></input>
         <button type="submit">Add User</button>
       </form>
-    </section>
+    </Card>
   );
 };
 

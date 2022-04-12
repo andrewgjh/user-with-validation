@@ -1,9 +1,29 @@
-.add_age_form{
-  display:flex;
-  flex:column;
-  align-items: center;
-  align-content: center;
+
+
+
+.input {
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
 }
-.section_add_age{
-  margin: 0 auto;
+
+.input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input input {
+  font: inherit;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.input input:focus {
+  outline: none;
+  border-color: #29325c;
 }
